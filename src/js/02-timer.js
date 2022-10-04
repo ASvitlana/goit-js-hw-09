@@ -12,6 +12,7 @@ const days = document.querySelector('span[data-days]');
 
 btnStart.disabled = true;
 
+
 const options = {
     enableTime: true,
     time_24hr: true,
@@ -35,6 +36,7 @@ function reversTimer() {
     let timer = setInterval(() => {
         let countdown = new Date(choseDate.value) - new Date();
         btnStart.disabled = true;
+        choseDate.disabled = true;
         if (countdown >= 0) {
             let timeObject = convertMs(countdown);
             days.textContent = addLeadingZero(timeObject.days);
